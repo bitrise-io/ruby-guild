@@ -32,14 +32,14 @@ p class A
 # => nil
 
 # You can have multiple return values
-def returns_two
-  [1, 2]
+def returns_multiple
+  [1, 2, 3]
 end
 
-p returns_two
-# => [1, 2]
+p returns_multiple
+# => [1, 2, 3]
 
 # You can "destructure" them like in JS or Go
-a, b = returns_two
+a, _, b = returns_multiple
 p a, b
-# => 1, 2
+# => 1, 3
