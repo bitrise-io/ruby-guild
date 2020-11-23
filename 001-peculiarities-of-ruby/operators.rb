@@ -7,7 +7,7 @@ p 1 + 2
 p 1.+(2)
 # => 3
 
-class A
+class Number
   def initialize(number)
     @value = number
   end
@@ -19,11 +19,25 @@ class A
   def -(v)
     @value - v
   end
+
+  def -@
+    -@value
+  end
+
+  def [](index)
+    @value.to_s(2)[index]
+  end
 end
 
-a = A.new(5)
+a = Number.new(5)
 p a + 2
 # => 7
+
+p -a
+# => -5
+
+p a[2] # a.[](2)
+# => "1"
 
 
 class BetterString < String

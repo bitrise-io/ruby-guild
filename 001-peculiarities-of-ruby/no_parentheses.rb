@@ -18,3 +18,6 @@ hello 'to me'
 
 p say hello 'to me'
 # => "say hello to me"
+
+
+# This could be a valid Ruby program: Show me the money!
