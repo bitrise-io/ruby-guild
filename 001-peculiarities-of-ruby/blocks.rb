@@ -24,9 +24,7 @@ end
 
 
 def map(array)
-  result = []
-  array.each { |e| result << yield(e) }
-  result
+  array.each_with_object([]) { |element, result| result << yield(element) }
 end
 
 p map([1, 2, 3]) { |n| n * 2 }

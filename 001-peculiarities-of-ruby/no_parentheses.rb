@@ -1,7 +1,7 @@
 # Parentheses are optional (except when required :) )
 
-def say(b)
-  'say ' + b
+def say(text)
+  p text
 end
 
 say('hello')
@@ -16,8 +16,9 @@ hello 'to me'
 
 # You can write sentences
 
-p say hello 'to me'
-# => "say hello to me"
+say hello 'to me'
+# => "hello to me"
 
 
 # This could be a valid Ruby program: Show me the money!
+# But would it make sense to write it?

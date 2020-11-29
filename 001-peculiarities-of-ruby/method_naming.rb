@@ -21,7 +21,7 @@ class B
   attr_accessor :token
 end
 
-b = A.new
+b = B.new
 b.token = 'another token'
 p b.token
 # => "another token"
@@ -33,7 +33,7 @@ def even?(number)
   number % 2 == 0
 end
 
-p even?(2)
+p even? 2
 # => true
 
 

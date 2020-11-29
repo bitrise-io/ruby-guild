@@ -1,5 +1,4 @@
-# Ruby allows you to overload most operators that work on an object
-#  - that's because most operators are actually methods!
+# Ruby allows you to overload most operators that work on an object - that's because most operators are actually methods!
 
 p 1 + 2
 # => 3

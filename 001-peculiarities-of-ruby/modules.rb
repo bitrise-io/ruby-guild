@@ -19,6 +19,7 @@ p StringUtil.palindrome? 'never odd or even'
 p StringUtil.snake_case 'never odd or even'
 # => "never_odd_or_even"
 
+
 # Modules can't be instantiated
 begin
   StringUtil.new

@@ -1,13 +1,13 @@
 # It's easy to design and implement a DSL in Ruby around a certain problem
 
-file :items do
+csv_file :items do
   filename 'items_*.csv'
   field :rownum
   field :item_id
   field :item_name
 end
 
-file :unique_items do
+csv_file :unique_items do
   field :item_id
   field :item_name
 end
@@ -15,13 +15,11 @@ end
 deduplicate :items, into: :unique_items, using_field: :item_id
 
 
-
-
 # For example like this:
 
 $file_definitions = {}
 
-def file(name, &block)
+def csv_file(name, &block)
   $file_definitions[name] = FileScope.new.instance_exec &block
 end
 

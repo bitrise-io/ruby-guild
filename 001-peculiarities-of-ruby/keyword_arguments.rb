@@ -1,6 +1,6 @@
-# Ruby supports passing arguments by name, rather than positionally
+# Ruby supports passing arguments by name, rather than positionally - these are called keyword arguments
 
-def split(string: , by: ' ')
+def split(string:, by: ' ')
   # ...
 end
 

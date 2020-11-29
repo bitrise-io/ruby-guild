@@ -12,15 +12,15 @@ def AccountGetHandler(c)
 
   if acc == nil
     ctx.Zap.Warn("Account not found")
-    return ctx.JSON(http.StatusNotFound, StandardErrorResponse.from({Message: "Not Found"}))
+    return ctx.JSON(http.StatusNotFound, StandardErrorResponse.with({Message: "Not Found"}))
   end
 
-  sub, err = ctx.Services.SubscriptionService.Find(models.Subscription.from({AccountID: acc.ID}))
+  sub, err = ctx.Services.SubscriptionService.Find(models.Subscription.with({AccountID: acc.ID}))
   if err != nil
     return err
   end
 
-  return c.JSON(http.StatusOK, AccountGetResponse.from({
+  return c.JSON(http.StatusOK, AccountGetResponse.with({
     Account:      acc,
     Subscription: sub,
   }))

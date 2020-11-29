@@ -16,5 +16,5 @@ else
 end
 
 # Both constructs have an inline form as well
-a = 1 if 1 == 1
+raise 'Something went wrong' if 1 == 1
 return 2 unless 2 == 2

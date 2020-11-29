@@ -1,4 +1,4 @@
-# In Ruby, everything is an object with methods
+# Everything is an object
 
 p 1.class
 # => Integer
@@ -64,7 +64,33 @@ module MyLogger
   end
 end
 
-# We can just include this module into the Object class and every object will have its own logger
+# We can include this module into the Object class and every object will have its own logger
 include MyLogger
 
 1.logger.info "I'm the one!"
+
+
+# This also allows you to extend the language
+
+class Class
+  def attribute(name)
+    define_method name do
+      instance_variable_get :"@#{name}"
+    end
+
+    define_method :"#{name}=" do |value|
+      instance_variable_set :"@#{name}", value
+    end
+  end
+end
+
+class HasAttribute
+  attribute :prop
+end
+
+a = HasAttribute.new
+a.prop = 2
+p a.prop
+# => 2
+
+# Remember attr_accessor earlier? We just implemented it (by a different name)...

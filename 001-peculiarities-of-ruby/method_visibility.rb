@@ -3,7 +3,7 @@
 class V1
   def public1; end
 
-  # You can define visibility for the following methods
+  # You can define visibility for the methods that follow
   private
 
   def private1; end
@@ -12,10 +12,10 @@ end
 
 V1.new.public1
 begin
-  V1.new.private2
+  V1.new.private1
 rescue NoMethodError => ex
   p ex
-  # => #<NoMethodError: private method `private2' called for #<V1:0x00007ff9978d1538>>
+  # => #<NoMethodError: private method `private1' called for #<V1:0x00007ff9978d1538>>
 end
 
 
@@ -36,18 +36,5 @@ end
 V2.new.private2
 
 
-class Receiver
-  def public_message
-    private_message
-  end
-  def self_public_message
-    self.private_message
-  end
-  private
-  def private_message
-    puts "This is a private message"
-  end
-end
-
 # The levels public / protected / private have their quirks (beyond today's scope) but they mostly work the same
-# as they do in other languages. As a practical tip, you almost never want/need to use protected.
+# as they do in other languages. As a practical tip, you almost never want or need to use protected.

@@ -1,12 +1,12 @@
-# In Ruby, every expression has a return value
+# Every expression has a return value
 
 p a = 1
 # => 1
 
-p a = b = 2 # a = (b = 1)
+p a = b = 2 # a = (b = 2)
 # => 2
 
-a = if 1 == 1
+a = if true
       3
     else
       4
@@ -15,8 +15,8 @@ p a
 # => 3
 
 def one
-  # A function's return value is the value of its last expression
-  1
+  # A function's return value is the value of its last expression => no need for a return statement
+  1 # return 1
 end
 p one
 # => 1
@@ -40,6 +40,6 @@ p returns_multiple
 # => [1, 2, 3]
 
 # You can "destructure" them like in JS or Go
-a, _, b = returns_multiple
+a, _, b = *returns_multiple
 p a, b
 # => 1, 3
