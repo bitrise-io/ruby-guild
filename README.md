@@ -8,10 +8,10 @@ For more information about the Guild, see our [Wiki page](https://bitrise.atlass
 
 Ruby was created by Yukihiro “Matz” Matsumoto and its first public release was in 1995.
 
-The Ruby language was created around the ideal that good software is written for people, not for computers. 
+The Ruby language was created around the core tenet that good software is written for people, not for computers. 
 Take a look at this very simple code example:
 
-```code
+```c++
 #include <iostream>
 using namespace std;
 
@@ -32,9 +32,16 @@ int main()
 ```
 
 As far as problems go they don't come any simpler, but does this program seem like it was written for humans to read 
-or for computers to execute?
+or for computers to execute? Now compare this with the following Ruby equivalent:
 
-As such, one of Ruby's primary goals is to provide you with tools to express yourself as freely as possible - 
+```ruby
+print 'Enter a positive integer: '
+n = readline.to_i
+sum = 1.upto(n).sum
+print "Sum = #{sum}"
+```
+
+To achieve its ideal, one of Ruby's primary goals is to provide you with tools to express yourself as freely as possible - 
 to make programming "natural". It won't stop you from writing crappy code, no language can do that, but if you 
 master it then you'll have the ability and the opportunity to write exceptional software, and not all languages 
 can stake such a claim.
