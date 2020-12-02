@@ -40,6 +40,6 @@ p returns_multiple
 # => [1, 2, 3]
 
 # You can "destructure" them like in JS or Go
-a, _, b = *returns_multiple
+a, _, b = returns_multiple
 p a, b
 # => 1, 3

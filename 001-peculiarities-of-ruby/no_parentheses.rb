@@ -1,7 +1,7 @@
 # Parentheses are optional (except when required :) )
 
 def say(text)
-  p text
+  p(text)
 end
 
 say('hello')

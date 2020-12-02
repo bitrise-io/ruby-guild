@@ -39,13 +39,13 @@ p even? 2
 
 # Methods that end with an ! need attention
 
-# Maybe they raise an error
-def validate_even!(number)
-  raise ArgumentError unless even? number
-end
-
-# Or they may mutate state
+# They may mutate state
 array = [3, 1, 2]
 array.sort!
 p array
 # => [1, 2, 3]
+
+# Or maybe they raise an error
+def validate_even!(number)
+  raise ArgumentError unless even? number
+end

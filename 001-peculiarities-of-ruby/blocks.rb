@@ -33,8 +33,8 @@ p map([1, 2, 3]) { |n| n * 2 }
 
 # You can declare the block parameter explicitly if you want to do something with it (e.g. run it in a specific context)
 
-def with(v, &block)
-  v.instance_exec &block
+def with(object, &block)
+  object.instance_exec &block
 end
 
 with 1 do

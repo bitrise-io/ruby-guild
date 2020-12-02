@@ -35,7 +35,7 @@ require 'logger'
 
 module MyLogger
   def logger
-    Logger.new(STDOUT)
+    Logger.new STDOUT
   end
 end
 

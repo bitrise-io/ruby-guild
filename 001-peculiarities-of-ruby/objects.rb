@@ -7,7 +7,7 @@ p 1.class
   # If you ever need a for loop in Ruby - though you probably won't
 end
 
-5.times { |i| '...' }
+5.times { '...' }
 
 # Even classes are objects
 p Integer.class

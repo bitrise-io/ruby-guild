@@ -7,7 +7,7 @@ p 'value' == :value
 p :value == :value
 # => true
 
-p 'value'.equal? "value"
+p 'value'.equal? 'value'
 # => false
 
 p :value.equal? :value
