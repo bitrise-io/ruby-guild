@@ -1,0 +1,5 @@
+source 'https://rubygems.org'
+
+gem 'sidekiq', '< 6'
+gem 'rspec'
+gem 'activesupport'
