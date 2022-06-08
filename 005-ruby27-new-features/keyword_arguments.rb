@@ -26,7 +26,7 @@ end
 
 # f2(key: 42)
 #=> warning: Passing the keyword argument as the last hash parameter is deprecated
-#=> missing keyword: :key (ArgumentError)
+#=> `f2': missing keyword: :key (ArgumentError)
 
 # -------------------------
 
@@ -52,5 +52,5 @@ f4(key: 42)
 def f5(hash = {}, **nil)
 end
 
-# f5(key: 42)
+f5(key: 42)
 #=> no keywords accepted (ArgumentError)
