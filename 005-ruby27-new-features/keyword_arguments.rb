@@ -24,7 +24,7 @@ f1(**{key: 42})
 def f2(x, key:)
 end
 
-# f2(key: 42)
+f2(key: 42)
 #=> warning: Passing the keyword argument as the last hash parameter is deprecated
 #=> `f2': missing keyword: :key (ArgumentError)
 
