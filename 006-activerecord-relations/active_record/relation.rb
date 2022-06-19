@@ -2,6 +2,8 @@
 class Relation
 # - lazy-loading
 #   - building queries, chaining filters, etc.
+#   - iterating over records
+#   - ...
 # - creating new records
 # - ...
 #

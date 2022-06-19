@@ -2,10 +2,6 @@ require_relative 'association'
 require_relative 'reflection'
 
 class ApplicationRecord
-  def self.primary_key
-    :id
-  end
-
   # Class-specific implementation
   #
   # def self.belongs_to(name)
@@ -57,10 +53,14 @@ class ApplicationRecord
 
   def association(name)
     @associations[name] ||= begin
-                              reflection = Reflection.new(name, self)
                               # In reality, we're instantiating different kind of associations, based on the
                               # reflection class (e.g. BelongsToAssociation or HasManyAssociation)
+                              reflection = Reflection.new(name, self)
                               Association.new(self, reflection)
                             end
+  end
+
+  def self.primary_key
+    :id
   end
 end

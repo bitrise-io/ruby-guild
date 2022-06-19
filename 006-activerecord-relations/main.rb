@@ -63,13 +63,13 @@ def belongs_to_with_caching(build)
   #=> 'new name'
 end
 
-def has_many_returning_arrays(repository)
+def has_many_problem_with_returning_arrays(repository)
   repository.builds
   # => SELECT * FROM builds WHERE repository_id = 42
   # => [ <#Build @repository_id=42> ]
   #
-  # We cannot call e.g. repository.builds.create ...
-  # What we want is
+  # This is a simple array. We cannot call e.g. repository.builds.create ...
+  # What we need is something like:
   # => <#ActiveRecord::Relation>
   #
   # The problem is caching. When we execute the query (e.g. by calling #to_a) of a relation
