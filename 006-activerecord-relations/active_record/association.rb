@@ -7,22 +7,22 @@ class Association
   end
 
   # Without caching
-  #
-  # def reader
-  #   klass = @reflection.klass
-  #   primary_key = @reflection.primary_key
-  #   foreign_key = @reflection.foreign_key
-  #
-  #   klass.where(primary_key => @owner[foreign_key]).first
-  # end
-  #
-  # def writer(record)
-  #   primary_key = @reflection.primary_key
-  #   foreign_key = @reflection.foreign_key
-  #
-  #   @owner[foreign_key] = record[primary_key]
-  # end
+  def reader
+    klass = @reflection.klass
+    primary_key = @reflection.primary_key
+    foreign_key = @reflection.foreign_key
 
+    klass.where(primary_key => @owner[foreign_key]).first
+  end
+
+  def writer(record)
+    primary_key = @reflection.primary_key
+    foreign_key = @reflection.foreign_key
+
+    @owner[foreign_key] = record[primary_key]
+  end
+
+  # With caching
   def reader
     klass = @reflection.klass
     primary_key = @reflection.primary_key

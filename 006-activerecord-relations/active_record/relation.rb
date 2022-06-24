@@ -7,6 +7,6 @@ class Relation
 # - creating new records
 # - ...
 #
-# Build.where(finished_at > 1.week.ago)
+# Build.where(repository_id: 42)
 # => <#ActiveRecord::Relation>
 end

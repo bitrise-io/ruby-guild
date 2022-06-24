@@ -1,5 +1,7 @@
 class Reflection
   def initialize(name, active_record)
+    # name: :repository
+    # active_record: Build
     @name = name
     @active_record = active_record
   end
@@ -17,6 +19,6 @@ class Reflection
   end
 
   def inverse_name
-    @active_record.name.underscore
+    @active_record.name.underscore.to_sym
   end
 end
