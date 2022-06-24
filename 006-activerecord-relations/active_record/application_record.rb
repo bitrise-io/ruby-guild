@@ -21,7 +21,7 @@ class ApplicationRecord
     foreign_key = reflection.foreign_key
 
     define_method(name) do
-      klass.where(primary_key => foreign_key).first
+      klass.where(primary_key => self[foreign_key]).first
     end
 
     define_method("#{name}=") do |record|
@@ -53,7 +53,7 @@ class ApplicationRecord
     @associations[name] ||= begin
                               # In reality, we're instantiating different kind of associations, based on the
                               # reflection class (e.g. BelongsToAssociation or HasManyAssociation)
-                              reflection = Reflection.new(name, self)
+                              reflection = Reflection.new(name, self.class)
                               Association.new(self, reflection)
                             end
   end
